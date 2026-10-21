@@ -1,0 +1,173 @@
+:root {
+    --main-color: #ffffff;
+    --black: #13131a;
+    --bg: #e3def9;
+    --border: 0.1rem solid rgba (255,255,255,0.3);
+     font-size: 10px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: none;
+    transition: 0.2s linear;
+    font-family: "Roboto", sans-serif;
+
+}
+ 
+body {
+    background-color: var(--bg);
+}
+
+section {
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-bottom: #b3a9e0;
+    background-color: var(--bg);
+}
+
+*{
+header section {
+    background-color: #dbd5f5;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+header section {
+    padding: 10px;
+    margin: 0 0rem;
+    max-width: 5200px;
+    border-top: -1000000000px;
+}
+}
+
+nav a {
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: black;
+}
+
+nav a:hover {
+    color: var(--main-color);
+    border-bottom: 1rem solid var(--main-color);
+    padding: 0.5rem;
+    font-size: 2rem;
+}
+
+.icons img {
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.icons img:hover {
+    width: 40px;
+    height: 40px;
+}
+
+.btn {
+    background: white;
+    color: #000000;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+.btn:hover {
+    letter-spacing: 0.1rem;
+}
+
+.home-container {
+    background: url(ChatGPT\ Image\ 30\ de\ set.\ de\ 2026\,\ 09_26_35.png);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+.home-container section {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+.content {
+    max-width: 60rem;
+}
+
+
+.content h3 {
+    color: #ffffff;
+    font-size: 6rem;
+}
+
+.content p {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 100;
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+.title {
+    font-size: 4rem;
+    color: #9689d3;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+.title span {
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.about .row {
+    display: flex;
+    align-items: center;
+    background-color: #B3A9E0;
+    gap: 1.5rem;
+}
+
+.about .row .content {
+    padding: 2rem;
+}
+
+.about .row .content h3 {
+    font-size: 3rem;
+    color: #ffffff;
+}
+
+.about .row .content p {
+    font-size: 1.6rem;
+    color: #ffffff;
+    padding: 1rem 0;
+    line-height: 1.8rem;
+}
+
+.menu .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.menu .box-container .box {
+    text-align: center;
+    border: var(--border);
+    padding: 5rem;
+}
