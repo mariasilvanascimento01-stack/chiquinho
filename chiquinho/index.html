@@ -1,104 +1,327 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#faf7f0">
+    <meta name="description" content="Descubra seu próximo sabor favorito na Chiquinho Sorvetes. Casquinhas, milk-shakes e sobremesas para deixar o dia mais gostoso.">
+    <title>Chiquinho Sorvetes | Um dia mais gostoso</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
-    <title>Chiquinho Sorvetes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
-
 <body>
-    <header class="header">
-        <section>
-            <a href="#" class="logo">
-                <img width="110" height="110" src="logo.png" alt="logo">
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="#home" aria-label="Chiquinho Sorvetes — início">
+                <span class="brand-name">Chiquinho<span>.</span></span>
+                <span class="brand-caption">SORVETES & MOMENTOS</span>
             </a>
-            <nav class="navbar">
-                <a href="#home">Home</a>
-                <a href="#menu">Menu</a>
-                <a href="#about">Sobre</a>
-                <a href="#contact">Contato</a>
+
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="primary-navigation" id="primary-navigation" aria-label="Navegação principal">
+                <a href="#home">Início</a>
+                <a href="#menu">Cardápio</a>
+                <a href="#clube">Clube doce</a>
+                <a href="#about">Sobre nós</a>
+                <a href="#reviews">Avaliações</a>
             </nav>
-            <div class="icons">
-                <img width="50" height="50" src="lupa.png" alt="lupa.png">
-                <img width="50" height="50" src="carrinho.png" alt="carrinho.png">
+
+            <div class="header-actions">
+                <a class="button button-small header-order" href="#menu">Faça seu pedido</a>
+                <button class="profile-trigger" type="button" aria-label="Entrar ou abrir meu perfil" aria-expanded="false" aria-controls="profile-panel">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg>
+                    <span class="profile-label">Entrar</span>
+                </button>
             </div>
-        </section>
+        </div>
     </header>
 
-    <div class="home-container">
-        <section id="#home">
-            <div class="content">
-                <h3>O MELHOR SORTEVE DO MUNDO</h3>
-                <P>Na Chiquinho Sorvetes, cada momento fica mais gostoso! Temos sorvetes e milk-shakes cremosos, deliciosos 
-                e preparados para deixar seu dia ainda melhor. Venha experimentar e descobrir o seu sabor favorito!</P>
-                <a href="#" class="btn">Faça seu pedido </a>
+    <main>
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <div class="hero-inner">
+                <div class="hero-copy" data-reveal>
+                    <span class="eyebrow"><span aria-hidden="true">✦</span> Um carinho em cada colherada</span>
+                    <h1 id="hero-title">O melhor sorvete <span>do mundo!</span></h1>
+                    <p>Tem dias que pedem um sabor especial. Encontre o seu entre sorvetes cremosos, milk-shakes irresistíveis e momentos que ficam na memória.</p>
+                    <a class="button" href="#menu">Conheça nosso cardápio <span aria-hidden="true">→</span></a>
+                    <div class="hero-note"><span class="hero-note-icon" aria-hidden="true">♡</span> Seu momento feliz começa aqui.</div>
+                </div>
+                <span class="hero-sparkle sparkle-one" aria-hidden="true">✦</span>
+                <span class="hero-sparkle sparkle-two" aria-hidden="true">♡</span>
+                <span class="hero-sparkle sparkle-three" aria-hidden="true">✧</span>
             </div>
         </section>
 
-    </div>
-
-    <section class="about" id="about">
-        <h2 class="title">SOBRE <span>NÓS</span></h2>
-        <div class="row">
-            <div class="container-image">
-                <img width="350" height="350" src="sobre2.png" alt="sobre-nos">
+        <section class="about section-shell" id="about" aria-labelledby="about-title">
+            <div class="about-image" data-reveal>
+                <img src="sobre2.png" alt="Milk-shake e sobremesa Chiquinho Sorvetes em uma ilustração colorida" loading="lazy">
+                <span class="about-sticker" aria-hidden="true">Feito para<br>alegrar seu dia</span>
             </div>
-            <div class="content">
-                <h3>O Que Faz Nossos Sorvetes Especiais</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae harum atque dicta in possimus, non officia, ratione architecto aut, minus vero dolorem quis rem sed omnis expedita? Ratione, fuga dicta?</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint et itaque perferendis consequatur distinctio est porro, ipsam deserunt totam tempora expedita esse aliquid? Aliquam magnam maxime maiores iste quibusdam minus?</p>
-                <a href="#" class="btn">SAIBA MAIS</a>
+            <div class="about-copy" data-reveal>
+                <span class="eyebrow">Muito prazer, somos a Chiquinho</span>
+                <h2 id="about-title">O Que Faz Nossos Sorvetes Especiais</h2>
+                <p>A gente acredita que os melhores momentos podem começar com uma sobremesa. Por isso, cada opção combina cremosidade, ingredientes deliciosos e aquele cuidado que faz toda a diferença.</p>
+                <p>Da casquinha clássica ao milk-shake caprichado, temos sabores para acompanhar encontros, comemorações ou simplesmente deixar um dia comum muito mais gostoso.</p>
+                <a class="button button-outline" href="#menu">Saiba mais <span aria-hidden="true">→</span></a>
+            </div>
+        </section>
+
+        <section class="club-section" id="clube" aria-labelledby="club-title">
+            <div class="section-shell club-shell">
+                <div class="section-heading" data-reveal>
+                    <span class="eyebrow">Uma brincadeira deliciosa</span>
+                    <h2 id="club-title">Clube <span>doce</span></h2>
+                    <p>Raspe uma casquinha por dia, descubra seu prêmio e junte pontos.</p>
+                </div>
+
+                <div class="club-card" data-reveal>
+                    <div class="club-info">
+                        <span class="club-kicker">Seu potinho de pontos</span>
+                        <div class="points-total"><span id="reward-points">0</span><span>pontos</span></div>
+                        <p class="points-copy" id="points-copy">Junte 100 pontos e troque por R$ 5 em desconto.</p>
+                        <div class="points-track" role="progressbar" aria-label="Progresso até o próximo cupom" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                            <span class="points-progress"></span>
+                        </div>
+                        <p class="points-next" id="points-next">Faltam 100 pontos para seu próximo mimo.</p>
+                        <button class="button button-small redeem-points" id="redeem-points" type="button" hidden>Trocar 100 pontos por R$ 5</button>
+                        <button class="use-points-coupon" id="use-points-coupon" type="button" hidden>Usar cupom PONTOS5</button>
+                        <p class="points-coupon-status" role="status" aria-live="polite"></p>
+                    </div>
+                    <div class="scratch-area">
+                        <h3>Qual casquinha tem surpresa?</h3>
+                        <p>Escolha uma para raspar. A sorte muda todo dia!</p>
+                        <div class="scratch-grid">
+                            <button class="scratch-card" type="button" data-scratch="0" aria-label="Raspar casquinha surpresa um">
+                                <span class="scratch-prize" aria-hidden="true">?</span>
+                                <span class="scratch-label">Casquinha 1</span>
+                            </button>
+                            <button class="scratch-card" type="button" data-scratch="1" aria-label="Raspar casquinha surpresa dois">
+                                <span class="scratch-prize" aria-hidden="true">?</span>
+                                <span class="scratch-label">Casquinha 2</span>
+                            </button>
+                            <button class="scratch-card" type="button" data-scratch="2" aria-label="Raspar casquinha surpresa três">
+                                <span class="scratch-prize" aria-hidden="true">?</span>
+                                <span class="scratch-label">Casquinha 3</span>
+                            </button>
+                        </div>
+                        <p class="scratch-feedback" role="status" aria-live="polite">Toque em uma casquinha para revelar seu prêmio.</p>
+                        <button class="use-prize-coupon" type="button" hidden>Usar meu cupom</button>
+                    </div>
+                </div>
+
+                <div class="coupon-area">
+                    <div class="coupon-heading">
+                        <span class="eyebrow">Um mimo no seu pedido</span>
+                        <h3>Cupons para adoçar o dia</h3>
+                    </div>
+                    <div class="coupon-grid">
+                        <article class="coupon-card">
+                            <div class="coupon-value">10% <span>OFF</span></div>
+                            <p>Para deixar qualquer pedido mais gostoso.</p>
+                            <code>DOCE10</code>
+                            <button class="coupon-use" type="button" data-coupon="DOCE10">Usar cupom</button>
+                        </article>
+                        <article class="coupon-card coupon-card-accent">
+                            <div class="coupon-value">R$ 5 <span>OFF</span></div>
+                            <p>Em pedidos a partir de R$ 25,00.</p>
+                            <code>SORVETE5</code>
+                            <button class="coupon-use" type="button" data-coupon="SORVETE5">Usar cupom</button>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section section-shell" id="menu" aria-labelledby="menu-title">
+            <div class="section-heading" data-reveal>
+                <span class="eyebrow">Um sabor para cada vontade</span>
+                <h2 id="menu-title">Nosso <span>Cardápio</span></h2>
+                <p>Escolha seu favorito e deixe o dia mais doce.</p>
             </div>
 
-     </div>
-    </section>
+            <div class="product-grid">
+                <article class="product-card" data-reveal>
+                    <div class="product-image"><img src="CAS.jpg" alt="Casquinha de sorvete com cobertura de chocolate" loading="lazy"></div>
+                    <div class="product-info">
+                        <h3>Casquinhas</h3>
+                        <p>Leve, crocante e com aquele sorvete cremoso que todo mundo ama.</p>
+                        <div class="product-bottom"><div class="price"><strong>R$ 4,99</strong><del>R$ 6,00</del></div><button class="button add-to-cart" type="button" data-id="casquinhas" data-name="Casquinhas" data-price="4.99" data-image="CAS.jpg">Adicionar ao carrinho</button></div>
+                    </div>
+                </article>
+                <article class="product-card" data-reveal>
+                    <div class="product-image"><img src="casss.png" alt="Cascão crocante com sorvete e cobertura de chocolate" loading="lazy"></div>
+                    <div class="product-info">
+                        <h3>Cascões</h3>
+                        <p>Uma casquinha ainda mais especial para saborear sem pressa.</p>
+                        <div class="product-bottom"><div class="price"><strong>R$ 7,49</strong><del>R$ 9,00</del></div><button class="button add-to-cart" type="button" data-id="cascao" data-name="Cascões" data-price="7.49" data-image="casss.png">Adicionar ao carrinho</button></div>
+                    </div>
+                </article>
+                <article class="product-card" data-reveal>
+                    <div class="product-image"><img src="BIGSUNDAE.jpg" alt="Big Sundae com sorvete, calda de chocolate e pedaços crocantes" loading="lazy"></div>
+                    <div class="product-info">
+                        <h3>Big Sundae</h3>
+                        <p>Camadas de sabor, calda deliciosa e muitos pedacinhos.</p>
+                        <div class="product-bottom"><div class="price"><strong>R$ 14,99</strong><del>R$ 18,00</del></div><button class="button add-to-cart" type="button" data-id="big-sundae" data-name="Big Sundae" data-price="14.99" data-image="BIGSUNDAE.jpg">Adicionar ao carrinho</button></div>
+                    </div>
+                </article>
+                <article class="product-card" data-reveal>
+                    <div class="product-image"><img src="MILK.jpg" alt="Milk-shakes cremosos em diferentes sabores" loading="lazy"></div>
+                    <div class="product-info">
+                        <h3>Milk Shakes</h3>
+                        <p>Bem geladinho, cremoso e perfeito para qualquer hora.</p>
+                        <div class="product-bottom"><div class="price"><strong>R$ 16,99</strong><del>R$ 20,00</del></div><button class="button add-to-cart" type="button" data-id="milk-shake" data-name="Milk Shakes" data-price="16.99" data-image="MILK.jpg">Adicionar ao carrinho</button></div>
+                    </div>
+                </article>
+                <article class="product-card" data-reveal>
+                    <div class="product-image"><img src="SHAMIX.jpg" alt="Shake Mix com sorvete cremoso e pedaços de chocolate" loading="lazy"></div>
+                    <div class="product-info">
+                        <h3>Shake Mix</h3>
+                        <p>A mistura irresistível de sorvete com seus complementos favoritos.</p>
+                        <div class="product-bottom"><div class="price"><strong>R$ 18,99</strong><del>R$ 22,00</del></div><button class="button add-to-cart" type="button" data-id="shake-mix" data-name="Shake Mix" data-price="18.99" data-image="SHAMIX.jpg">Adicionar ao carrinho</button></div>
+                    </div>
+                </article>
+                <article class="product-card" data-reveal>
+                    <div class="product-image"><img src="TOPMIX.jpg" alt="Top Mix com sorvete e cobertura generosa de chocolate" loading="lazy"></div>
+                    <div class="product-info">
+                        <h3>Top Mix</h3>
+                        <p>Sorvete cremoso com uma combinação deliciosa de texturas.</p>
+                        <div class="product-bottom"><div class="price"><strong>R$ 22,99</strong><del>R$ 27,00</del></div><button class="button add-to-cart" type="button" data-id="top-mix" data-name="Top Mix" data-price="22.99" data-image="TOPMIX.jpg">Adicionar ao carrinho</button></div>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-    <section class="menu" id="menu">
-        <h2 class="title">Nosso <span>Menu</span></h2>
+        <section class="reviews-section" id="reviews" aria-labelledby="reviews-title">
+            <div class="section-shell">
+                <div class="section-heading" data-reveal>
+                    <span class="eyebrow">Carinho que dá gosto de compartilhar</span>
+                    <h2 id="reviews-title">Momentos <span>mais felizes</span></h2>
+                    <p>Exemplos ilustrativos de quem ama uma pausa doce.</p>
+                </div>
+                <div class="review-grid">
+                    <article class="review-card" data-reveal>
+                        <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+                        <blockquote>“O milk-shake é supercremoso e sempre deixa nosso passeio mais gostoso!”</blockquote>
+                        <p class="review-author">Marina S. <span>Exemplo ilustrativo</span></p>
+                    </article>
+                    <article class="review-card" data-reveal>
+                        <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+                        <blockquote>“Adoro as opções do cardápio. Sempre encontro um sabor para chamar de meu.”</blockquote>
+                        <p class="review-author">Lucas R. <span>Exemplo ilustrativo</span></p>
+                    </article>
+                    <article class="review-card" data-reveal>
+                        <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+                        <blockquote>“Uma sobremesa deliciosa para dividir com quem a gente gosta.”</blockquote>
+                        <p class="review-author">Ana C. <span>Exemplo ilustrativo</span></p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        <div class="box-container">
-            <div class="box">
-                <img src="CAS.jpg" alt="item-1">
-                <h3>Casquinha</h3>
-                <div class="price">R$ 4,99 <span>R$ 6,00</span></div>
-                <a href="#" class="bnt">Adicione ao carrinho</a>
-            </div>   
-             <div class="box">
-                <img src="" alt="item-1">
-                <h3>Cascão</h3>
-                <div class="price">R$ 7,49 <span>R$ 9,00</span></div>
-                <a href="#" class="bnt">Adicione ao carrinho</a>
-            </div>   
-             <div class="box">
-                <img src="BIGSUNDAE.jpg" alt="item-1">
-                <h3>Big Sundae</h3>
-                <div class="price">R$ 15,99 <span>R$ 20,00</span></div>
-                <a href="#" class="bnt">Adicione ao carrinho</a>
-            </div>   
-             <div class="box">
-                <img src="CAS.jpg" alt="item-1">
-                <h3>Casquinha</h3>
-                <div class="price">R$ 15,99 <span>R$ 20,00</span></div>
-                <a href="#" class="bnt">Adicione ao carrinho</a>
-            </div>   
-             <div class="box">
-                <img src="CAS.jpg" alt="item-1">
-                <h3>Casquinha</h3>
-                <div class="price">R$ 15,99 <span>R$ 20,00</span></div>
-                <a href="#" class="bnt">Adicione ao carrinho</a>
-            </div>   
-             <div class="box">
-                <img src="CAS.jpg" alt="item-1">
-                <h3>Casquinha</h3>
-                <div class="price">R$ 15,99 <span>R$ 20,00</span></div>
-                <a href="#" class="bnt">Adicione ao carrinho</a>
-            </div>   
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <a class="brand footer-brand" href="#home" aria-label="Chiquinho Sorvetes — voltar ao início">
+                <span class="brand-name">Chiquinho<span>.</span></span>
+                <span class="brand-caption">SORVETES & MOMENTOS</span>
+            </a>
+            <nav class="footer-navigation" aria-label="Navegação do rodapé">
+                <a href="#home">Início</a>
+                <a href="#menu">Cardápio</a>
+                <a href="#clube">Clube doce</a>
+                <a href="#about">Sobre nós</a>
+                <a href="#reviews">Avaliações</a>
+            </nav>
+            <div class="social-links" aria-label="Redes sociais">
+                <a href="https://www.instagram.com/chiquinhosorvetes/" aria-label="Instagram da Chiquinho Sorvetes" target="_blank" rel="noopener noreferrer">ig</a>
+                <a href="https://www.facebook.com/chiquinhosorvetes/" aria-label="Facebook da Chiquinho Sorvetes" target="_blank" rel="noopener noreferrer">f</a>
+                <a href="https://www.tiktok.com/@chiquinhosorvetes" aria-label="TikTok da Chiquinho Sorvetes" target="_blank" rel="noopener noreferrer">♪</a>
+            </div>
         </div>
+        <p class="copyright">© 2026 Chiquinho Sorvetes. Todos os direitos reservados.</p>
+    </footer>
+
+    <button class="cart-trigger" type="button" aria-label="Abrir carrinho, 0 itens" aria-expanded="false" aria-controls="cart-panel">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 1.9-1.4L22 8H6M10 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm8 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/></svg>
+        <span class="cart-count" aria-live="polite">0</span>
+    </button>
+
+    <div class="profile-backdrop" hidden></div>
+    <section class="profile-panel" id="profile-panel" role="dialog" aria-modal="true" aria-labelledby="profile-title" aria-hidden="true">
+        <div class="profile-header">
+            <div>
+                <span class="eyebrow">Clube Chiquinho</span>
+                <h2 id="profile-title">Meu perfil</h2>
+            </div>
+            <button class="profile-close" type="button" aria-label="Fechar perfil">×</button>
+        </div>
+        <div class="profile-current" hidden>
+            <div class="profile-avatar" aria-hidden="true"><span class="profile-initial">C</span></div>
+            <h3 class="profile-name"></h3>
+            <p class="profile-email"></p>
+            <div class="profile-points"><span class="profile-points-value">0</span> pontos no Clube doce</div>
+            <div class="profile-actions">
+                <button class="button button-outline profile-edit" type="button">Editar perfil</button>
+                <button class="profile-logout" type="button">Sair do perfil</button>
+            </div>
+        </div>
+        <form class="profile-form">
+            <p class="profile-intro">Entre para guardar seu perfil e acompanhar os pontos que ganhar no Clube doce.</p>
+            <label for="profile-name-input">Como podemos chamar você?</label>
+            <input id="profile-name-input" name="name" type="text" minlength="2" maxlength="60" autocomplete="name" required placeholder="Seu nome">
+            <label for="profile-email-input">Seu e-mail</label>
+            <input id="profile-email-input" name="email" type="email" maxlength="120" autocomplete="email" required placeholder="voce@email.com">
+            <p class="profile-demo-note">Perfil demonstrativo: nome e e-mail ficam salvos somente neste navegador. Não use senha real.</p>
+            <button class="button profile-submit" type="submit">Salvar meu perfil</button>
+        </form>
     </section>
+
+    <div class="cart-backdrop" hidden></div>
+    <aside class="cart-panel" id="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true">
+        <div class="cart-header">
+            <div><span class="eyebrow cart-eyebrow">Seu pedido</span><h2 id="cart-title">Meu carrinho</h2></div>
+            <button class="cart-close" type="button" aria-label="Fechar carrinho">×</button>
+        </div>
+        <div class="cart-items" aria-live="polite"></div>
+        <section class="order-success" aria-labelledby="order-success-title" aria-live="polite" hidden>
+            <span class="order-success-icon" aria-hidden="true">✓</span>
+            <h3 id="order-success-title">Pedido realizado com sucesso!</h3>
+            <p class="order-success-thanks">Obrigada pela preferência 💜</p>
+            <p class="order-success-note">Este é um pedido de demonstração. Nenhum pedido foi enviado à loja.</p>
+            <button class="button order-success-back" type="button">Voltar para a loja</button>
+        </section>
+        <div class="cart-empty">
+            <span aria-hidden="true">🍦</span>
+            <p>Seu carrinho ainda está vazio.</p>
+            <a class="button button-outline cart-continue" href="#menu">Escolher delícias</a>
+        </div>
+        <div class="cart-summary" hidden>
+            <form class="coupon-form">
+                <label for="coupon-code">Tem um cupom?</label>
+                <div class="coupon-input-row">
+                    <input id="coupon-code" name="coupon" type="text" placeholder="Digite seu código" autocomplete="off">
+                    <button class="button button-small" type="submit">Aplicar</button>
+                </div>
+                <p class="coupon-feedback" role="status" aria-live="polite"></p>
+                <button class="remove-cart-coupon" type="button" hidden>Remover cupom</button>
+            </form>
+            <div class="cart-totals">
+                <div><span>Subtotal</span><strong class="cart-subtotal">R$ 0,00</strong></div>
+                <div class="cart-discount-row" hidden><span>Desconto <span class="cart-coupon-name"></span></span><strong class="cart-discount">− R$ 0,00</strong></div>
+                <div class="cart-total-row"><span>Total</span><strong class="cart-total">R$ 0,00</strong></div>
+            </div>
+            <p>Valores ilustrativos para esta demonstração.</p>
+            <button class="button cart-finish" type="button">Finalizar pedido <span aria-hidden="true">→</span></button>
+        </div>
+    </aside>
+    <div class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
