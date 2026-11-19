@@ -13,6 +13,7 @@ const cartTitle = document.querySelector("#cart-title");
 const cartEyebrow = document.querySelector(".cart-eyebrow");
 const orderSuccess = document.querySelector(".order-success");
 const orderSuccessBack = document.querySelector(".order-success-back");
+const orderSuccessNote = document.querySelector(".order-success-note");
 const cartDiscountRow = document.querySelector(".cart-discount-row");
 const cartDiscount = document.querySelector(".cart-discount");
 const cartCouponName = document.querySelector(".cart-coupon-name");
@@ -52,6 +53,14 @@ let orderComplete = false;
 let rewardPoints = readStoredCount("chiquinho.reward-points");
 let pointCoupons = readStoredCount("chiquinho.point-coupons");
 let demoProfile = readDemoProfile();
+let supabaseClient = null;
+
+if (window.supabase && window.supabaseConfig?.url && window.supabaseConfig?.publishableKey) {
+    supabaseClient = window.supabase.createClient(
+        window.supabaseConfig.url,
+        window.supabaseConfig.publishableKey
+    );
+}
 
 const currency = new Intl.NumberFormat("pt-BR", {
     style: "currency",
@@ -293,15 +302,58 @@ function closeCart() {
     }
 }
 
-function finalizeOrder() {
+async function finalizeOrder() {
     if (cart.size === 0) return;
 
+    const finishButton = document.querySelector(".cart-finish");
+    finishButton.disabled = true;
+    finishButton.textContent = "Registrando pedido...";
+
+    const items = Array.from(cart.values()).map((product) => ({
+        product_id: product.id,
+        quantity: product.quantity
+    }));
+
+    if (!supabaseClient) {
+        finishButton.disabled = false;
+        finishButton.textContent = "Finalizar pedido →";
+        showToast("O Supabase ainda não está configurado.");
+        return;
+    }
+
+    let clientToken = localStorage.getItem("chiquinho.client-token");
+    if (!clientToken) {
+        clientToken = crypto.randomUUID();
+        localStorage.setItem("chiquinho.client-token", clientToken);
+    }
+
+    const { data, error } = await supabaseClient.rpc("place_order", {
+        p_items: items,
+        p_coupon: appliedCoupon || null,
+        p_profile_name: demoProfile?.name || null,
+        p_profile_email: demoProfile?.email || null,
+        p_client_token: clientToken
+    });
+
+    finishButton.disabled = false;
+    finishButton.textContent = "Finalizar pedido →";
+
+    if (error) {
+        setCouponMessage(error.message || "Não foi possível registrar o pedido.", true);
+        showToast("Pedido não registrado. Confira os dados.");
+        return;
+    }
+
+    const orderNumber = data?.[0]?.order_number;
     orderComplete = true;
     cart.clear();
     appliedCoupon = "";
     localStorage.removeItem("chiquinho.applied-coupon");
     couponInput.value = "";
     removeCouponButton.hidden = true;
+    orderSuccessNote.textContent = orderNumber
+        ? `Seu pedido ${orderNumber} foi registrado no Supabase.`
+        : "Seu pedido foi registrado no Supabase.";
     updateCart();
     orderSuccessBack.focus();
 }
